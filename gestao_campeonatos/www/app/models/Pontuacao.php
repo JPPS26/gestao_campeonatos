@@ -24,5 +24,16 @@ class Pontuacao {
             return false; // Retorna false em caso de erro
         }
     }
+    public function getPontuacoesByJogador($id_jogador) {
+        try {
+            $stmt = $this->db->prepare("SELECT * FROM pontuacoes WHERE id_jogador = :id_jogador");
+            $stmt->bindParam(':id_jogador', $id_jogador);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC); // Retorna todas as pontuações do jogador
+        } catch (PDOException $e) {
+            error_log("Erro ao buscar pontuações do jogador: " . $e->getMessage());
+            return []; // Retorna um array vazio em caso de erro
+        }
+    }
 }
 ?>
