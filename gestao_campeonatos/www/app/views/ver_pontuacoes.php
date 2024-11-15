@@ -41,6 +41,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
     <!-- Container principal -->
     <div class="container mt-5">
         <h2 class="text-center">Suas Pontuações</h2>
+        <br>
             <table class="table table-bordered mt-4">
                 <thead>
                     <tr>

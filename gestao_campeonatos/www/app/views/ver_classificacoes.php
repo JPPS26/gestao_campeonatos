@@ -41,7 +41,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
     <!-- Container principal -->
     <div class="container mt-5">
         <h2 class="text-center">Ver Classificações</h2>
-
+        <br>
         <form action="" method="POST" class="mb-4">
             <div class="form-group">
                 <label for="id_campeonato">Selecione um Campeonato</label>

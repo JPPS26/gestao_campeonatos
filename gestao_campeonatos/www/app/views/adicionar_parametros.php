@@ -40,7 +40,8 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2>Adicionar Parâmetros de Pontuação</h2>
+    <h2 class="text-center">Adicionar Parâmetros de Pontuação</h2>
+        <br>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="nome_parametro">Nome do Parâmetro</label>

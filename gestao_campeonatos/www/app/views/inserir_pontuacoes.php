@@ -40,7 +40,8 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2>Inserir Pontuações</h2>
+        <h2 class="text-center">Inserir Pontuações</h2>
+        <br>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="id_utilizador">Utilizador</label>

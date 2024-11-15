@@ -41,6 +41,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
     <!-- Container principal -->
     <div class="container mt-5">
         <h2 class="text-center">Editar Perfil</h2>
+        <br>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="nome_completo">Nome Completo</label>

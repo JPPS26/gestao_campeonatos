@@ -40,7 +40,8 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2>Criar Campeonato</h2>
+    <h2 class="text-center">Criar Campeonatos</h2>
+    <br>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="nome_campeonato">Nome do Campeonato</label>
