@@ -27,7 +27,7 @@ CREATE TABLE campeonatos (
 -- Criação da tabela Temporadas
 CREATE TABLE temporadas (
     id_temporada INT AUTO_INCREMENT PRIMARY KEY,
-    ano_temporada INT NOT NULL CHECK (ano_temporada >= 1900 AND ano_temporada <= YEAR(CURDATE())),
+    ano_temporada INT NOT NULL,
     numero_jogos INT NOT NULL,
     pontuacoes INT NOT NULL,
     id_campeonato INT,
