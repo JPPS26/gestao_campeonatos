@@ -19,11 +19,11 @@ class AuthController {
 
     public function login($id_jogador, $palavra_passe) {
         $utilizador = new Utilizador();
-        $user = $utilizador->getUserByIdAndPassword($id_jogador, $palavra_passe);
+        $user = $utilizador->getUserByIdAndPassword($id_jogador, $palavra_passe); // Corrigido aqui
         
         if ($user) {
             session_start();
-            $_SESSION['id_utilizador'] = $user['id'];
+            $_SESSION['id_utilizador'] = $user['id_utilizador']; // Alterado de 'id' para 'id_utilizador'
             $_SESSION['tipo_utilizador'] = $user['tipo_utilizador'];
             
             if ($user['tipo_utilizador'] === 'administrador') {
