@@ -84,15 +84,15 @@ $parametros = $parametroModel->getAllParametros(); // Método para buscar todos 
         <h2 class="text-center">Inserir Pontuações</h2>
         <br>
         <form action="" method="POST">
-            <div class="form-group">
-                <label for="id_utilizador">Utilizador</label>
-                <select class="form-control" id="id_utilizador" name="id_utilizador" required>
-                    <option value="">Selecione um Utilizador</option>
-                    <?php foreach ($utilizadores as $utilizador): ?>
-                        <option value="<?php echo $utilizador['id_utilizador']; ?>"><?php echo $utilizador['nome_completo']; ?></option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
+        <div class="form-group">
+        <label for="id_utilizador">Utilizador (ID do Jogador)</label>
+        <select class="form-control" id="id_utilizador" name="id_utilizador" required>
+            <option value="">Selecione um Utilizador</option>
+                <?php foreach ($utilizadores as $utilizador): ?>
+            <option value="<?php echo $utilizador['id_jogador']; ?>"><?php echo $utilizador['id_jogador']; ?></option>
+                <?php endforeach; ?>
+        </select>
+</div>
             <div class="form-group">
                 <label for="id_campeonato">Campeonato</label>
                 <select class="form-control" id="id_campeonato" name="id_campeonato" required>
