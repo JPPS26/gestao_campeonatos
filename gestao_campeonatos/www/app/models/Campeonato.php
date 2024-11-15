@@ -33,5 +33,11 @@ class Campeonato {
             return false;
         }
     }
+    // Método para buscar todos os campeonatos
+    public function getAllCampeonatos() {
+        $stmt = $this->db->prepare("SELECT * FROM campeonatos");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>
