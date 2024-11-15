@@ -1,47 +1,48 @@
 version: '3.8'
 
 services:
-  # Serviço para o PHP com Apache
-  php:
+  web:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: ./php
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
-      - ./src:/var/www/html
-    networks:
-      - app-network
+      - ./www:/var/www/html
     depends_on:
       - db
+    networks:
+      - app-network
 
-  # Serviço para o MySQL
   db:
-    image: mysql:5.7
+    image: mysql:8.0
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
       MYSQL_DATABASE: meu_banco
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
     volumes:
-      - db_data:/var/lib/mysql
+      - db-data:/var/lib/mysql
     networks:
       - app-network
 
-  # Serviço para o phpMyAdmin
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: rootpassword
-    ports:
-      - "8080:80"
-    networks:
-      - app-network
     depends_on:
       - db
+    networks:
+      - app-network
+
+volumes:
+  db-data:
 
 networks:
   app-network:
-    driver: bridge
-
-volumes:
-  db_data:c
