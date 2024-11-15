@@ -50,5 +50,10 @@ class Utilizador {
         $stmt->execute();
         return $stmt->fetchColumn() > 0;
     }
+    public function getAllUtilizadores() {
+        $stmt = $this->db->prepare("SELECT * FROM utilizadores");
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }
 ?>

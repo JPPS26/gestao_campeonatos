@@ -37,7 +37,9 @@ CREATE TABLE pontuacoes (
     id_pontuacao INT AUTO_INCREMENT PRIMARY KEY,
     id_utilizador INT,
     id_campeonato INT,
+    id_parametro INT,
     pontuacao INT,
     FOREIGN KEY (id_utilizador) REFERENCES utilizadores(id_utilizador) ON DELETE CASCADE,
-    FOREIGN KEY (id_campeonato) REFERENCES campeonatos(id_campeonato) ON DELETE CASCADE
+    FOREIGN KEY (id_campeonato) REFERENCES campeonatos(id_campeonato) ON DELETE CASCADE,
+    FOREIGN KEY (id_parametro) REFERENCES parametros(id_parametro) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
