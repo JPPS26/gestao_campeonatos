@@ -4,6 +4,27 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
     header("Location: login.php");
     exit();
 }
+require_once '../models/Campeonato.php'; // Incluindo o modelo Campeonato
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome_campeonato = $_POST['nome_campeonato'];
+    $data_inicio = $_POST['data_inicio'];
+    $data_fim = $_POST['data_fim'];
+
+    // Instancia o modelo de Campeonato
+    $campeonato = new Campeonato();
+
+    // Tenta criar o campeonato
+    $success = $campeonato->createCampeonato($nome_campeonato, $data_inicio, $data_fim);
+
+    if ($success) {
+        header("Location: criar_campeonatos.php?success=Campeonato criado com sucesso!");
+        exit();
+    } else {
+        header("Location: criar_campeonatos.php?error=Já existe um campeonato com esse nome. Tente novamente.");
+        exit();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,6 +36,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
@@ -57,6 +79,11 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
             </div>
             <button type="submit" class="btn btn-primary">Criar Campeonato</button>
         </form>
+        <?php if (isset($_GET['success'])): ?>
+            <div class="alert alert-success mt-3"><?php echo htmlspecialchars($_GET['success']); ?></div>
+        <?php elseif (isset($_GET['error'])): ?>
+            <div class="alert alert-danger mt-3"><?php echo htmlspecialchars($_GET['error']); ?></div>
+        <?php endif; ?>
     </div>
 
     <!-- Rodapé -->
