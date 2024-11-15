@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Administrador</title>
+    <title>Criar Campeonato</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -40,21 +40,22 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2 class="text-center">Bem-vindo ao Painel do Administrador</h2>
-        <p class="text-center">Aqui você pode gerenciar seu perfil, visualizar seus campeonatos e pontuações.</p>
-        
-        <!-- Seção de opções -->
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <a href="criar_campeonatos.php" class="btn btn-info btn-block">Criar Campeonatos</a>
+        <h2>Criar Campeonato</h2>
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="nome_campeonato">Nome do Campeonato</label>
+                <input type="text" class="form-control" id="nome_campeonato" name="nome_campeonato" required>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="adicionar_parametros.php" class="btn btn-success btn-block">Adicionar Parâmetros de Pontuação</a>
+            <div class="form-group">
+                <label for="data_inicio">Data de Início</label>
+                <input type="date" class="form-control" id="data_inicio" name="data_inicio" required>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="inserir_pontuacoes.php" class="btn btn-warning btn-block">Inserir Pontuações</a>
+            <div class="form-group">
+                <label for="data_fim">Data de Fim</label>
+                <input type="date" class="form-control" id="data_fim" name="data_fim" required>
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Criar Campeonato</button>
+        </form>
     </div>
 
     <!-- Rodapé -->

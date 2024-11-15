@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Administrador</title>
+    <title>Inserir Pontuações</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -40,21 +40,28 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2 class="text-center">Bem-vindo ao Painel do Administrador</h2>
-        <p class="text-center">Aqui você pode gerenciar seu perfil, visualizar seus campeonatos e pontuações.</p>
-        
-        <!-- Seção de opções -->
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <a href="criar_campeonatos.php" class="btn btn-info btn-block">Criar Campeonatos</a>
+        <h2>Inserir Pontuações</h2>
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="id_utilizador">Utilizador</label>
+                <select class="form-control" id="id_utilizador" name="id_utilizador" required>
+                    <option value="">Selecione um Utilizador</option>
+                    <!-- Opções de utilizadores serão inseridas aqui -->
+                </select>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="adicionar_parametros.php" class="btn btn-success btn-block">Adicionar Parâmetros de Pontuação</a>
+            <div class="form-group">
+                <label for="id_campeonato">Campeonato</label>
+                <select class="form-control" id="id_campeonato" name="id_campeonato" required>
+                    <option value="">Selecione um Campeonato</option>
+                    <!-- Opções de campeonatos serão inseridas aqui -->
+                </select>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="inserir_pontuacoes.php" class="btn btn-warning btn-block">Inserir Pontuações</a>
+            <div class="form-group">
+                <label for="pontuacao">Pontuação</label>
+                <input type="number" class="form-control" id="pontuacao" name="pontuacao" required>
             </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Inserir Pontuação</button>
+        </form>
     </div>
 
     <!-- Rodapé -->
