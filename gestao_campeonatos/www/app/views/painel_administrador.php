@@ -42,7 +42,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
     <div class="container mt-5">
         <h2 class="text-center">Bem-vindo ao Painel do Administrador</h2>
         <p class="text-center">Aqui você pode gerenciar seu perfil, visualizar seus campeonatos e pontuações.</p>
-        
+        <br>
         <!-- Seção de opções -->
         <div class="row mt-4">
             <div class="col-md-4 mb-3">

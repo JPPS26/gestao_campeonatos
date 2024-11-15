@@ -42,7 +42,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
     <div class="container mt-5">
         <h2 class="text-center">Bem-vindo ao Painel do Utilizador</h2>
         <p class="text-center">Aqui você pode editar o seu perfil, visualizar as suas pontuações e classificações.</p>
-        
+        <br>
         <!-- Seção de opções -->
         <div class="row mt-4">
             <div class="col-md-4 mb-3">
