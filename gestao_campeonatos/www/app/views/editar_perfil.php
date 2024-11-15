@@ -21,14 +21,14 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
             <a class="navbar-brand" href="painel_utilizador.php">Painel do Utilizador</a>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                <li class="nav-item">
+                        <a class="nav-link" href="editar_perfil.php">Editar Perfil</a>
+                    </li>
+                <li class="nav-item">
                         <a class="nav-link" href="ver_pontuacoes.php">Ver Pontuações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="ver_classificacoes.php">Ver Classificações</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="editar_perfil.php">Editar Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Terminar Sessão</a>
