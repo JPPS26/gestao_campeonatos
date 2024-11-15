@@ -55,5 +55,37 @@ class Utilizador {
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function getUserById($id_utilizador) {
+        $stmt = $this->db->prepare("SELECT * FROM utilizadores WHERE id_utilizador = :id_utilizador");
+        $stmt->bindParam(':id_utilizador', $id_utilizador);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    public function updateUser ($id_utilizador, $nome_completo, $data_nascimento, $numero_documento_identificacao) {
+        try {
+            // Verifica se o número do documento de identificação já está em uso por outro utilizador
+            $stmt = $this->db->prepare("SELECT COUNT(*) FROM utilizadores WHERE numero_documento_identificacao = :numero_documento_identificacao AND id_utilizador != :id_utilizador");
+            $stmt->bindParam(':numero_documento_identificacao', $numero_documento_identificacao);
+            $stmt->bindParam(':id_utilizador', $id_utilizador);
+            $stmt->execute();
+    
+            if ($stmt->fetchColumn() > 0) {
+                return false; // Retorna false se o número do documento já estiver em uso
+            }
+    
+            // Se não estiver em uso, realiza a atualização
+            $stmt = $this->db->prepare("UPDATE utilizadores SET nome_completo = :nome_completo, data_nascimento = :data_nascimento, numero_documento_identificacao = :numero_documento_identificacao WHERE id_utilizador = :id_utilizador");
+            
+            $stmt->bindParam(':nome_completo', $nome_completo);
+            $stmt->bindParam(':data_nascimento', $data_nascimento);
+            $stmt->bindParam(':numero_documento_identificacao', $numero_documento_identificacao);
+            $stmt->bindParam(':id_utilizador', $id_utilizador);
+    
+            return $stmt->execute(); // Retorna true se a atualização for bem-sucedida
+        } catch (PDOException $e) {
+            error_log("Erro ao atualizar usuário: " . $e->getMessage());
+            return false; // Retorna false em caso de erro
+        }
+    }
 }
 ?>
