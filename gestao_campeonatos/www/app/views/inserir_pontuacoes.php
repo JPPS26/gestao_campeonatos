@@ -25,7 +25,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
                         <a class="nav-link" href="criar_campeonatos.php">Criar Campeonatos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adicionar_parametros.php">Adicionar Parâmetros de Pontuação</a>
+                        <a class="nav-link" href="adicionar_parametros.php">Adicionar Parâmetros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="inserir_pontuacoes.php">Inserir Pontuações</a>

@@ -25,7 +25,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
                         <a class="nav-link" href="criar_campeonatos.php">Criar Campeonatos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="adicionar_parametros.php">Adicionar Parâmetros de Pontuação</a>
+                        <a class="nav-link" href="adicionar_parametros.php">Adicionar Parâmetros</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="inserir_pontuacoes.php">Inserir Pontuações</a>
@@ -49,7 +49,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
                 <a href="criar_campeonatos.php" class="btn btn-info btn-block">Criar Campeonatos</a>
             </div>
             <div class="col-md-4 mb-3">
-                <a href="adicionar_parametros.php" class="btn btn-success btn-block">Adicionar Parâmetros de Pontuação</a>
+                <a href="adicionar_parametros.php" class="btn btn-success btn-block">Adicionar Parâmetros</a>
             </div>
             <div class="col-md-4 mb-3">
                 <a href="inserir_pontuacoes.php" class="btn btn-warning btn-block">Inserir Pontuações</a>
