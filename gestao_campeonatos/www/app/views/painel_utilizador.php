@@ -22,13 +22,13 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="perfil.php">Meu Perfil</a>
+                        <a class="nav-link" href="">Editar Perfil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="meus_campeonatos.php">Meus Campeonatos</a>
+                        <a class="nav-link" href="">Ver Pontuações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="minhas_pontuacoes.php">Minhas Pontuações</a>
+                        <a class="nav-link" href="">Ver Classificações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Terminar Sessão</a>
@@ -41,18 +41,18 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
     <!-- Container principal -->
     <div class="container mt-5">
         <h2 class="text-center">Bem-vindo ao Painel do Utilizador</h2>
-        <p class="text-center">Aqui você pode gerenciar seu perfil, visualizar seus campeonatos e pontuações.</p>
+        <p class="text-center">Aqui você pode editar o seu perfil, visualizar as suas pontuações e classificações.</p>
         
         <!-- Seção de opções -->
         <div class="row mt-4">
             <div class="col-md-4 mb-3">
-                <a href="perfil.php" class="btn btn-info btn-block">Editar Perfil</a>
+                <a href="" class="btn btn-info btn-block">Editar Perfil</a>
             </div>
             <div class="col-md-4 mb-3">
-                <a href="meus_campeonatos.php" class="btn btn-success btn-block">Meus Campeonatos</a>
+                <a href="" class="btn btn-success btn-block">Ver Pontuações</a>
             </div>
             <div class="col-md-4 mb-3">
-                <a href="minhas_pontuacoes.php" class="btn btn-warning btn-block">Minhas Pontuações</a>
+                <a href="" class="btn btn-warning btn-block">Ver Classificações</a>
             </div>
         </div>
     </div>

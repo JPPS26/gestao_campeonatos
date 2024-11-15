@@ -24,14 +24,20 @@ CREATE TABLE campeonatos (
     CONSTRAINT chk_data CHECK (data_fim > data_inicio)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Criação da tabela Temporadas
-CREATE TABLE temporadas (
-    id_temporada INT AUTO_INCREMENT PRIMARY KEY,
-    ano_temporada INT NOT NULL,
-    numero_jogos INT NOT NULL,
-    pontuacoes INT NOT NULL,
+-- Tabela de parâmetros de pontuação
+CREATE TABLE parametros (
+    id_parametro INT AUTO_INCREMENT PRIMARY KEY,
+    nome_parametro VARCHAR(100) NOT NULL,
+    ponderacao INT NOT NULL,
     id_campeonato INT,
-    id_utilizador INT NULL,
-    FOREIGN KEY (id_campeonato) REFERENCES campeonatos(id_campeonato) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_utilizador) REFERENCES utilizadores(id_utilizador) ON DELETE SET NULL ON UPDATE CASCADE
+    FOREIGN KEY (id_campeonato) REFERENCES campeonatos(id_campeonato) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE pontuacoes (
+    id_pontuacao INT AUTO_INCREMENT PRIMARY KEY,
+    id_utilizador INT,
+    id_campeonato INT,
+    pontuacao INT,
+    FOREIGN KEY (id_utilizador) REFERENCES utilizadores(id_utilizador) ON DELETE CASCADE,
+    FOREIGN KEY (id_campeonato) REFERENCES campeonatos(id_campeonato) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

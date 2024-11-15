@@ -22,13 +22,13 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="criar_campeonatos.php">Gerir Campeonatos</a>
+                        <a class="nav-link" href="">Criar Campeonatos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="gerir_pontuacoes.php">Gerir Pontuções</a>
+                        <a class="nav-link" href="">Adicionar Parâmetros de Pontuação</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="classificacoes.php">Classificações</a>
+                        <a class="nav-link" href="">Inserir Pontuações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Terminar Sessão</a>
@@ -46,13 +46,13 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
         <!-- Seção de opções -->
         <div class="row mt-4">
             <div class="col-md-4 mb-3">
-                <a href="criar_campeonatos.php" class="btn btn-info btn-block">Gerir Campeonatos</a>
+                <a href="" class="btn btn-info btn-block">Criar Campeonatos</a>
             </div>
             <div class="col-md-4 mb-3">
-                <a href="gerir_pontuacoes.php" class="btn btn-success btn-block">Gerir Pontuções</a>
+                <a href="" class="btn btn-success btn-block">Adicionar Parâmetros de Pontuação</a>
             </div>
             <div class="col-md-4 mb-3">
-                <a href="classificacoes.php" class="btn btn-warning btn-block">Classificações</a>
+                <a href="" class="btn btn-warning btn-block">Inserir Pontuações</a>
             </div>
         </div>
     </div>
