@@ -18,21 +18,21 @@ $pontuacaoModel = new Pontuacao();
 
 // Processando o formulário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Verifica se 'id_campeonato' está definido
-    if (isset($_POST['id_campeonato'])) {
-        $id_campeonato = $_POST['id_campeonato'];
+    // Verifica se 'id_jogador' está definido
+    if (isset($_POST['id_utilizador'])) {
+        $id_jogador = $_POST['id_utilizador']; // Aqui é onde você pega o id_jogador
     } else {
-        header("Location: inserir_pontuacoes.php?error=Campeonato não selecionado.");
+        header("Location: inserir_pontuacoes.php?error=Jogador não selecionado.");
         exit();
     }
 
     // Captura outros dados do formulário
-    $id_utilizador = $_POST['id_utilizador'];
+    $id_campeonato = $_POST['id_campeonato'];
     $id_parametro = $_POST['id_parametro'];
     $pontuacao = $_POST['pontuacao'];
 
     // Tenta inserir a pontuação
-    $success = $pontuacaoModel->createPontuacao($id_utilizador, $id_campeonato, $id_parametro, $pontuacao);
+    $success = $pontuacaoModel->createPontuacao($id_jogador, $id_campeonato, $id_parametro, $pontuacao);
 
     if ($success) {
         header("Location: inserir_pontuacoes.php?success=Pontuação inserida com sucesso!");
@@ -87,11 +87,11 @@ $parametros = $parametroModel->getAllParametros(); // Método para buscar todos 
         <div class="form-group">
         <label for="id_utilizador">Utilizador (ID do Jogador)</label>
         <select class="form-control" id="id_utilizador" name="id_utilizador" required>
-            <option value="">Selecione um Utilizador</option>
-                <?php foreach ($utilizadores as $utilizador): ?>
-            <option value="<?php echo $utilizador['id_jogador']; ?>"><?php echo $utilizador['id_jogador']; ?></option>
-                <?php endforeach; ?>
-        </select>
+    <option value="">Selecione um Utilizador</option>
+    <?php foreach ($utilizadores as $utilizador): ?>
+        <option value="<?php echo $utilizador['id_jogador']; ?>"><?php echo $utilizador['id_jogador']; ?></option>
+    <?php endforeach; ?>
+</select>
 </div>
             <div class="form-group">
                 <label for="id_campeonato">Campeonato</label>
