@@ -22,7 +22,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="gerir_campeonatos.php">Gerir Campeonatos</a>
+                        <a class="nav-link" href="criar_campeonatos.php">Gerir Campeonatos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="gerir_pontuacoes.php">Gerir Pontuções</a>
@@ -46,7 +46,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
         <!-- Seção de opções -->
         <div class="row mt-4">
             <div class="col-md-4 mb-3">
-                <a href="gerir_campeonatos.php" class="btn btn-info btn-block">Gerir Campeonatos</a>
+                <a href="criar_campeonatos.php" class="btn btn-info btn-block">Gerir Campeonatos</a>
             </div>
             <div class="col-md-4 mb-3">
                 <a href="gerir_pontuacoes.php" class="btn btn-success btn-block">Gerir Pontuções</a>
