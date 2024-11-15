@@ -20,7 +20,7 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: mysql_host
-      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_ROOT_PASSWORD: root
     networks:
       - app-network
 
