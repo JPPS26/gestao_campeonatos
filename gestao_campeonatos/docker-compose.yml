@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.1-apache  # Use a versão do PHP que preferir
+    container_name: gestao_campeonatos
+    ports:
+      - "8080:80"  # Mapeia a porta 8080 do seu host para a porta 80 do container (Apache)
+    volumes:
+      - .:C:\Users\jpps2\OneDrive\Ambiente de Trabalho\gestao_campeonatos\gestao_campeonatos  # Monta a pasta do seu projeto no ambiente de trabalho no container
+    depends_on:
+      - db
+
+  db:
+    image: mysql:5.7  # Use a versão do MySQL que preferir
+    container_name: meu_projeto_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: gestao_campeonatos
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 
+    ports:
+      - "3306:3306"  # Porta padrão do MySQL
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
