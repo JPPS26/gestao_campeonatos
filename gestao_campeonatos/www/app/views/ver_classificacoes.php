@@ -44,7 +44,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
         <br>
         <form action="" method="POST" class="mb-4">
             <div class="form-group">
-                <label for="id_campeonato">Selecione um Campeonato</label>
+                <label for="id_campeonato">Campeonatos</label>
                 <select class="form-control" id="id_campeonato" name="id_campeonato" required>
                     <option value="">Selecione um Campeonato</option>
                 </select>
@@ -69,6 +69,14 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
                             <td>33</td>
                             <td>10</td>
                             <td>100</td>
+                        </tr>
+
+                        <tr>
+                            <td>2º</td>
+                            <td>admin</td>
+                            <td>50</td>
+                            <td>5</td>
+                            <td>88</td>
                         </tr>
                 </tbody>
             </table>
