@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Utilizador</title>
+    <title>Ver Classificações</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,10 +22,10 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Editar Perfil</a>
+                        <a class="nav-link" href="ver_pontuacoes.php">Ver Pontuações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="ver_pontuacoes.php">Ver Pontuações</a>
+                        <a class="nav-link" href="editar_perfil.php">Editar Perfil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="ver_classificacoes.php">Ver Classificações</a>
@@ -40,21 +40,38 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2 class="text-center">Bem-vindo ao Painel do Utilizador</h2>
-        <p class="text-center">Aqui você pode editar o seu perfil, visualizar as suas pontuações e classificações.</p>
-        
-        <!-- Seção de opções -->
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <a href="" class="btn btn-info btn-block">Editar Perfil</a>
+        <h2 class="text-center">Ver Classificações</h2>
+
+        <form action="" method="POST" class="mb-4">
+            <div class="form-group">
+                <label for="id_campeonato">Selecione um Campeonato</label>
+                <select class="form-control" id="id_campeonato" name="id_campeonato" required>
+                    <option value="">Selecione um Campeonato</option>
+                </select>
             </div>
-            <div class="col-md-4 mb-3">
-                <a href="ver_pontuacoes.php" class="btn btn-success btn-block">Ver Pontuações</a>
-            </div>
-            <div class="col-md-4 mb-3">
-                <a href="ver_classificacoes.php" class="btn btn-warning btn-block">Ver Classificações</a>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-primary">Ver Classificações</button>
+        </form>
+        <br>
+            <table class="table table-bordered mt-4">
+                <thead>
+                    <tr>
+                        <th>Posição</th>
+                        <th>Utilizador</th>
+                        <th>Parâmetro 1</th>
+                        <th>Parâmetro 2</th>
+                        <th>Pontuação Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>1º</td>
+                            <td>user</td>
+                            <td>33</td>
+                            <td>10</td>
+                            <td>100</td>
+                        </tr>
+                </tbody>
+            </table>
     </div>
 
     <!-- Rodapé -->

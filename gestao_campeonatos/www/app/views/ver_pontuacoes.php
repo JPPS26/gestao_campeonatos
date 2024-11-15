@@ -48,7 +48,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
                         <th>Parâmetro 1</th>
                         <th>Parâmetro 2</th>
                         <th>Parâmetro 3</th>
-                        <th>Pontuação</th>
+                        <th>Pontuação Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
                             <td>20</td>
                             <td>80</td>
                             <td>1</td>
-                            <td>200</td>
+                            <td>100</td>
                         </tr>
                 </tbody>
             </table>
