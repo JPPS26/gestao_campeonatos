@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Utilizador</title>
+    <title>Ver Pontuações</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -22,13 +22,13 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="">Editar Perfil</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="ver_pontuacoes.php">Ver Pontuações</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">Ver Classificações</a>
+                        <a class="nav-link" href="editar_perfil.php">Editar Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ver_classificacoes.php">Ver Classificações</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php">Terminar Sessão</a>
@@ -40,21 +40,27 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'util
 
     <!-- Container principal -->
     <div class="container mt-5">
-        <h2 class="text-center">Bem-vindo ao Painel do Utilizador</h2>
-        <p class="text-center">Aqui você pode editar o seu perfil, visualizar as suas pontuações e classificações.</p>
-        
-        <!-- Seção de opções -->
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <a href="" class="btn btn-info btn-block">Editar Perfil</a>
-            </div>
-            <div class="col-md-4 mb-3">
-                <a href="ver_pontuacoes.php" class="btn btn-success btn-block">Ver Pontuações</a>
-            </div>
-            <div class="col-md-4 mb-3">
-                <a href="" class="btn btn-warning btn-block">Ver Classificações</a>
-            </div>
-        </div>
+        <h2 class="text-center">Suas Pontuações</h2>
+            <table class="table table-bordered mt-4">
+                <thead>
+                    <tr>
+                        <th>Campeonato</th>
+                        <th>Parâmetro 1</th>
+                        <th>Parâmetro 2</th>
+                        <th>Parâmetro 3</th>
+                        <th>Pontuação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                        <tr>
+                            <td>Liga Portugal</td>
+                            <td>20</td>
+                            <td>80</td>
+                            <td>1</td>
+                            <td>200</td>
+                        </tr>
+                </tbody>
+            </table>
     </div>
 
     <!-- Rodapé -->
