@@ -46,15 +46,19 @@ if (!isset($_SESSION['id_utilizador']) || $_SESSION['tipo_utilizador'] !== 'admi
                 <label for="id_utilizador">Utilizador</label>
                 <select class="form-control" id="id_utilizador" name="id_utilizador" required>
                     <option value="">Selecione um Utilizador</option>
-                    <!-- Opções de utilizadores serão inseridas aqui -->
                 </select>
             </div>
             <div class="form-group">
                 <label for="id_campeonato">Campeonato</label>
                 <select class="form-control" id="id_campeonato" name="id_campeonato" required>
                     <option value="">Selecione um Campeonato</option>
-                    <!-- Opções de campeonatos serão inseridas aqui -->
                 </select>
+            <div class="form-group">
+                <label for="id_parametro">Parâmetro</label>
+                <select class="form-control" id="id_parametro" name="id_parametro" required>
+                    <option value="">Selecione um Parâmetro</option>
+                </select>
+            </div>
             </div>
             <div class="form-group">
                 <label for="pontuacao">Pontuação</label>
